@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="login1.css">
+</head>
+<body>
+    <div class="outer">
+        <div class="container">
+            <h1>Create an Account</h1>
+            <div class="input">
+                <input type="text" placeholder="Full Name" required id="fullName"/>
+                <input type="email" placeholder="Enter your email" required id="email"/>
+                <input type="password" placeholder="password" id="password"/>
+                <input type="password" placeholder="confirm-password" id="confirmPassword"/>
+                <input type="date" id="dateofbirth"  />
+                <select id="Gender" name="Gender" >
+                    <option value="">Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+        
+                </select>
+            </div>
+           
+            <div class="terms">
+                <input type="checkbox" id="termsCheckbox"/>
+                <label for="checkbox">Terms and Conditions</label>
+            </div>
+            <div class="submit" >
+                <button type="button" href="#" id="submitBtn">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="popup-container">
+        <div class="popup-message">Account created</div>
+      </div>
+      <script>
+        document.getElementById('submitBtn').addEventListener('click', () => {
+          // Clear input fields
+          document.getElementById('fullName').value = '';
+          document.getElementById('email').value = '';
+          document.getElementById('password').value = '';
+          document.getElementById('confirmPassword').value = '';
+          document.getElementById('dateofbirth').value = '';
+          document.getElementById('Gender').selectedIndex = 0;
+          document.getElementById('termsCheckbox').checked = false;
+
+          // Show popup
+          document.querySelector('.popup-container').classList.add('show-popup');
+          setTimeout(() => {
+            document.querySelector('.popup-container').classList.remove('show-popup');
+          }, 3000);
+        });
+      </script>
+   
+</body>
+</html>
